@@ -141,7 +141,7 @@ function paraBuilder(obj) {
 }
 
 function genEpubUrl(url, bookId, chapterId, readType) {
-  const k = encrypt(paraBuilder({ bookId, chapterId }));
+    const k = encrypt(paraBuilder({ encrypt:1 , bookId, chapterId }));//20211107-修正出错，恢复下载功能
   return `${url}?k=${k}&readType=${readType}`;
 }
 
